@@ -5,15 +5,17 @@ const Login = (props) => {
     <Container>
       <Content>
         <CTA>
-          <CTALogoOne src='/images/cta-logo-one.svg' alt='' />
-          <SignUp>GET ALL THERE</SignUp>
+          {/* <CTALogoOne src='/images/cta-logo-limited-offer.png' alt='Disney logo with limited time offer written on the beside' /> */}
+          <CTAPrice src='/images/euro-promo-price.png' alt='limited time offer of €1.99 per month for 3 months' />
+          <Save><span>Save 75%</span></Save>
+          <SignUp>SIGN UP NOW</SignUp>
           <Description>
             Offer ends 20/09/23. New and eligible returning subscribers only. Must be 18+. Savings compared to the current monthly price of €8.99. After 3 months auto-renews at then-current monthly price of €10.99 until cancelled. <span>Terms apply</span>.
-          </Description>
-          <Description>
+            <br/>
+            <br/>
             Elemental and Welcome to Wrexham Season 2 streaming September 13. Loki Season 2 streaming October 6.
           </Description>
-          <CTALogoTwo src='/images/cta-logo-two.png' alt='' />
+          <CTALogoTwo src='/images/cta-logo-star.png' alt='' />
         </CTA>
         <BgImage />
       </Content>
@@ -57,18 +59,43 @@ const BgImage = styled.div`
 `;
 
 const CTA = styled.div`
-  max-width: 650px;
+  max-width: 600px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 7vh;
 `;
 
 const CTALogoOne = styled.img`
-  margin-bottom: 12px;
-  max-width: 650px;
+  margin-bottom: 30px;
+  max-width: 600px;
   min-height: 1px
   display: block;
   width: 100%;
+`;
+
+const CTAPrice = styled.img`
+  margin-bottom: 30px;
+  max-width: 600px;
+  min-height: 1px
+  display: block;
+  width: 100%;
+`;
+
+const Save = styled.p`
+  color: #f9f9f9;
+  font-size: 12px;
+  margin: 0 0 24px;
+  line-height: 1.5;
+
+  & span {
+    color: #f9f9f9;
+    font-weight: bolder;
+    font-size: 44px;
+    line-height: 54px;
+    margin-bottom: 30px;
+  }
 `;
 
 const SignUp = styled.a`
@@ -76,12 +103,14 @@ const SignUp = styled.a`
   color: #f9f9f9;
   background-color: #0063a5;
   margin-bottom: 12px;
-  width: 100%;
+  width: 60%;
   letter-spacing: 1.5px;
   font-size: 18px;
-  padding: 16px 0;
+  margin-bottom: 30px;
+  padding: 16px 24px;
   border: 1px solid transparent;
   border-radius: 4px;
+  cursor: pointer;
 
   &:hover {
     background-color: #0483ee;
@@ -104,7 +133,7 @@ const Description = styled.p`
 
 const CTALogoTwo = styled.img`
   display: inline-block;
-  max-width: 650px;
+  max-width: 600px;
   margin-bottom: 20px;
   min-height: 1px;
   vertical-align: bottom;
